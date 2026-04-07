@@ -2,6 +2,7 @@ const express = require("express");
 const mysql = require("mysql2");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
+require("dotenv").config();
 
 const app = express();
 app.use(cors());
@@ -9,10 +10,10 @@ app.use(express.json());
 
 // 🔗 DB CONNECTION
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "root", // It's better to use environment variables for credentials
-  password: "root",
-  database: "movieapp",
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER, // It's better to use environment variables for credentials
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 db.connect((err) => {
@@ -484,6 +485,6 @@ app.delete(["/delete-account", "/delete-account/:id"], (req, res) => {
 });
 
 // 🚀 SERVER
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
   console.log("Server running on port 5000");
 });

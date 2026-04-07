@@ -1,5 +1,5 @@
 
-const API_KEY = "d371de37";
+const API_KEY = import.meta.env.API_KEY; // Make sure to set this in your .env file
 
 export const fetchMovies = async (search) => {
   const res = await fetch(

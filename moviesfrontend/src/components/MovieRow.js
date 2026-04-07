@@ -15,7 +15,7 @@ function MovieRow({ title, search, filter, limit }) {
   const [trailerUrl, setTrailerUrl] = useState("");
   const navigate = useNavigate();
 
-  const YOUTUBE_API_KEY = "AIzaSyD_6_IuxTFvAlC83TKUiGTcujN4jgWz-FY";
+  const YOUTUBE_API_KEY = import.meta.env.YOUTUBE_API_KEY; // Make sure to set this in your .env file
 
   // ✅ Check if already added
   const isAdded =
