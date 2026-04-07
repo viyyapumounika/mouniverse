@@ -1,0 +1,168 @@
+/* Container */
+.auth-container {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #111; /* SAME as main app */
+}
+
+/* Background */
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background: url("https://rukmini1.flixcart.com/image/1500/1500/xif0q/poster/r/s/n/medium-pack-of-54-movies-aesthetic-wall-collage-kit-posters-original-imagy9t2rhvmvt3n.jpeg?q=70") no-repeat center/cover;
+
+  filter: blur(6px) brightness(0.75);
+  transform: scale(1.1);
+
+  animation: bgMove 20s infinite alternate ease-in-out;
+}
+
+@keyframes bgMove {
+  0% {
+    transform: scale(1.1) translateX(0px);
+  }
+  100% {
+    transform: scale(1.2) translateX(-30px);
+  }
+}
+
+/* Login Box */
+.auth-box {
+  position: relative;
+  z-index: 2;
+
+  width: 360px;
+  padding: 30px;
+  border-radius: 10px;
+
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: white;
+  text-align: center;
+
+  /* SAME SHADOW STYLE */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+/* Title */
+.title {
+  color: #e50914; /* SAME RED */
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+/* Input container */
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Input field */
+.input-group input {
+  width: 100%;            /* full width */
+  padding: 12px;
+
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 5px;
+
+  color: white;
+  font-size: 14px;
+
+  outline: none;
+  box-sizing: border-box;  /* VERY IMPORTANT */
+}
+
+/* Label (simple, above input) */
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: #bbb;
+}
+
+
+/* Floating animation */
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -8px;
+  left: 8px;
+  font-size: 11px;
+  color: #e50914;
+  background: #111;
+  padding: 0 6px;
+  border-radius: 4px;
+}
+
+/* Button (MATCH YOUR APP BUTTONS) */
+.btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+
+  background: #e50914; /* same as navbar & buttons */
+  border: none;
+  border-radius: 5px;
+
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* right-bottom shadow like you wanted */
+  box-shadow: 5px 5px 12px rgba(0, 0, 0, 0.7);
+
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #f40612;
+  transform: translateY(-2px);
+}
+
+/* Message */
+.msg {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Links */
+p {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #bbb;
+  cursor: pointer;
+}
+
+p:hover {
+  color: white;
+}
+.auth-box {
+  display: flex;
+  flex-direction: column;   /* 🔥 IMPORTANT */
+  align-items: center;
+}
+
+/* Inputs */
+.auth-box input {
+  width: 100%;              /* full width */
+  max-width: 300px;         /* control size */
+  padding: 12px;
+  margin: 8px 0;
+
+  display: block;           /* force new line */
+  box-sizing: border-box;
+
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: white;
+}
